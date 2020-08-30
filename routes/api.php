@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+header('Access-Control-Allow-Origin: https://northpoll.findaldo.dev');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
+header('Access-Control-Allow-Headers: Content-Type, X-Auth-Token, Origin, Authorization');
+
 Route::get('poll/{poll}')->name('poll.view')->uses('PollController@view');
 Route::post('poll')->name('poll.store')->uses('PollController@store');
 Route::get('poll/{poll}/results')->name('poll.results')->uses('PollController@results');
