@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['http://localhost:8080', 'https://northpoll.findaldo.dev'],
+    'allowed_origins' => ['http://localhost:8080', 'https://northpoll.xyz', 'https://northpoll.findaldo.dev'],
 
     'allowed_origins_patterns' => ['*'],
 
