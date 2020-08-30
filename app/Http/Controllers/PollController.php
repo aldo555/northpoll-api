@@ -16,7 +16,7 @@ class PollController extends Controller
 
         if ($votes > 0) {
           return response()->json([
-              'poll' => $poll->id,
+              'poll' => $poll->load('options'),
               'message' => 'You already voted. What are you trying to achieve here, slick?',
           ], 200);
         }
@@ -43,8 +43,8 @@ class PollController extends Controller
     }
 
     public function results(Poll $poll) {
-      return response()->json([
-          'poll' => $poll,
-      ], 200);
+        return response()->json([
+            'poll' => $poll,
+        ], 200);
     }
 }
