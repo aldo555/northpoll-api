@@ -32,12 +32,14 @@ class PollController extends Controller
             'title' => \Request::input('title'),
         ]);
 
+        $poll->update(['slug' => \Str::idToPrettyUrl($poll->id)]);
+
         collect(\Request::input('options'))->each(function ($option) use ($poll) {
             $poll->options()->create($option);
         });
 
         return response()->json([
-            'poll' => $poll->id,
+            'poll' => $poll->slug,
             'message' => 'You did it, champ! Your parents haven\'t been as proud of you since middle school.',
         ], 200);
     }

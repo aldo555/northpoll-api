@@ -14,6 +14,7 @@ class Poll extends Model
      */
     protected $fillable = [
         'title',
+        'slug',
     ];
 
     /**
@@ -24,6 +25,16 @@ class Poll extends Model
     protected $appends = [
         'results',
     ];
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     /**
      * Get the options for the poll.
