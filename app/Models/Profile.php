@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Option;
 
-class Vote extends Model
+class Profile extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -12,7 +13,6 @@ class Vote extends Model
      * @var array
      */
     protected $fillable = [
-      'ip',
-      'profile_id'
+        'name'
     ];
 }

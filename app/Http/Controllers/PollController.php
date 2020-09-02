@@ -27,7 +27,6 @@ class PollController extends Controller
     }
 
     public function store() {
-        \Log::info(\Request::all());
         $poll = Poll::create([
             'title' => \Request::input('title'),
         ]);

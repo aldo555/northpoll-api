@@ -8,7 +8,8 @@ class VoteController extends Controller
 {
     public function __invoke(Option $option) {
         $option->votes()->create([
-            'ip' => \Request::ip()
+            'ip' => \Request::ip(),
+            'profile_id' => \Request::input('profile'),
         ]);
 
         return response()->json([

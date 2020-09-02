@@ -19,3 +19,5 @@ Route::post('poll')->name('poll.store')->uses('PollController@store');
 Route::get('poll/{poll}/results')->name('poll.results')->uses('PollController@results');
 
 Route::post('option/{option}/vote')->name('vote.store')->uses('VoteController');
+
+Route::post('profile')->name('profile.create')->uses('ProfileController');
